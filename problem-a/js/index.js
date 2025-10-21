@@ -66,11 +66,7 @@ console.log(numbers);
 //You can use the `Math.floor()` function to round to a whole number.
 //Log out the median value.
 numbers.sort();
-if (numbers.length % 2 !=0) {
-    console.log()
-} else {
-    numbers[numbers.length / 2 - 1] 
-}
+console.log(numbers[Math.floor(numbers.length / 2)]);
 
 
 /** Objects **/
