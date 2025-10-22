@@ -99,6 +99,13 @@ console.log(fumbleArray.length);
 //returns the game that has a greater number of passing yards.
 //Your function should handle the case where the _first_ game has no 
 //`passing_yards` property, in which case it should return the second game.
+function mostYardsPassing(gameOne, gameTwo) {
+  if (gameOne.passing_yards === undefined) {
+    return gameTwo;
+  } else {
+    return (gameOne.passing_yards > gameTwo.passing_yards) ? gameOne : gameTwo;
+  }
+}
 
 
 //Create a variable `mostPassingGame` that refers to the "game" that had the most
@@ -109,7 +116,8 @@ console.log(fumbleArray.length);
 // - Consider: why do this with `reduce()` instead of `filter()`?
 //
 //Log out the game with the most passing yards.
-
+let mostPassingGame = huskyGames2016.reduce(mostYardsPassing, {});
+console.log(mostPassingGame);
 
 
 //It would be useful to be able to apply multiple "filter criteria" to an array
