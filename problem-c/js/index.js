@@ -128,7 +128,12 @@ console.log(mostPassingGame);
 //game object and returns the result of passing that object to both of the 
 //callback functions and "anding" (&&) the results. The `makeCombinedFilter()` 
 //function should then return this new function.
-
+function makeCombinedFilter(callBackOne, callBackTwo) {
+  function combinedFilter(gameObject) {
+    return callBackOne(gameObject) && callBackTwo(gameObject);
+  }
+  return combinedFilter;
+}
 
 //Create a variable `fumbledAndLostFilter` which is the result of calling the 
 //`makeCombinedFilter()` function and passing two callback functions: 
@@ -136,12 +141,16 @@ console.log(mostPassingGame);
 //one for filtering for games with fumbles (this can be a named or an anonymous
 //callback like you used earlier).
 //Note that `fumbledAndLostFilter` _is_ a function!
-
+let fumbledAndLostFilter = makeCombinedFilter(huskiesLost, function(game){
+  if (game.fumbles > 0) {
+    return game;
+  }});
 
 //Create an array of games that UW lost with fumbles. Use the 
 //`fumbledAndLostFilter()` function as a callback to the `filter()` method.
 //Log out the array of games lost with fumbles.
-
+let arrayLostWithFumbles = huskyGames2016.filter(fumbledAndLostFilter);
+console.log(arrayLostWithFumbles);
 
 
 //OPTIONAL extra practice: create a variable `avgScoreDifference` that
