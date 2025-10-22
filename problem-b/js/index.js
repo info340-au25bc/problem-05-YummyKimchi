@@ -148,7 +148,15 @@ function getHighCard(arrayCard) {
 
 /* Define a function `isFlush()` that takes in an array of "card" objects and
    returns whether or not the cards all have the same _suit_. */
-
+function isFlush(arrayCard) {
+  let returnObject = arrayCard.pop();
+  for (let i in arrayCard) {
+    if (returnObject.suit !== arrayCard[i].suit) {
+      return false;
+    }
+  }
+  return true;
+}
    
 
 /* Extra challenge: define a function `hasPair()` that takes in an array of 
