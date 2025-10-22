@@ -37,13 +37,20 @@ let huskyGames2016 = [
 //Define a function `extractOpponent()` that takes in a "game" object and returns
 //UW's opponent (whether or not that was the home team!)
 //You can test this by passing in an individual element from the array.
-
+function extractOpponent(game) {
+  if (game.opponent !== "UW") { 
+    return game.opponent; 
+  } else if (game.home !== "UW") {
+    return game.home;
+  }
+}
 
 //Use the `map()` method and your `extractOpponent()` function to create an array
 //of UW's opponents for the season (in the same order as in the `huskyGames2016`).
 //The opponents in the list do not need to be unique.
 //Log out the opponents array.
-
+let extractArray = huskyGames2016.map(extractOpponent);
+console.log(extractArray);
 
 //Define a function `huskiesLost()` that takes in a "game" object and returns
 //whether or not UW lost.
