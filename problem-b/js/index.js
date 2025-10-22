@@ -31,8 +31,8 @@ console.log(twelveString);
    You can call the method and log the result to check your work. Compare to
      http://www.mathwarehouse.com/calculators/continuous-compound-interest-calculator.php
 */
-function compoundInterest(principle, interest_rate, num_years) {
-  return principle * Math.exp(interest_rate * num_years);
+function compoundInterest(principle, interestRate, numYears) {
+  return principle * Math.exp(interestRate * numYears);
 }
 console.log(compoundInterest(100, 0.04, 6));
 
@@ -44,7 +44,28 @@ console.log(compoundInterest(100, 0.04, 6));
    number. For numbers which are multiples of both three and five, the array 
    should contain "FizzBuzz" instead of the number.
    The returned array should be empty for arguments less than 1. */
+function fizzBuzz(num) {
+  let array = [];
+  if (num < 1) {
+    return array;
+  }
 
+  for (let i = 0; i <= num; i++) {
+    let checkNum = i + 1;
+    if ((checkNum % 3 === 0) && (checkNum % 5 === 0)) {
+      array[i] = "FizzBuzz";
+    } else if (checkNum % 3 === 0) {
+      array[i] = "Fizz";
+    } else if (checkNum % 5 === 0) {
+      array[i] = "Buzz";
+    } else {
+      array[i] = checkNum;
+    }
+  }
+
+  return array;
+}
+console.log(fizzBuzz(20).slice(7, 15));
    
 
 /* Define a function `getLetterFrequencies()` that takes in a single string as 
