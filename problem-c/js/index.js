@@ -40,7 +40,7 @@ let huskyGames2016 = [
 function extractOpponent(game) {
   if (game.opponent !== "UW") { 
     return game.opponent; 
-  } else if (game.home !== "UW") {
+  } else {
     return game.home;
   }
 }
@@ -54,12 +54,19 @@ console.log(extractArray);
 
 //Define a function `huskiesLost()` that takes in a "game" object and returns
 //whether or not UW lost.
-
+function huskiesLost(game) {
+  if (game.opponent !== "UW") {
+    return game.opponent_score > game.home_score;
+  } else {
+    return game.opponent_score < game.home_score;
+  }
+}
 
 //Use the `filter()` method to create an array of games that UW lost (a smaller
 //array than the games they won!)
 //Log out the array of lost games.
-
+let lostArray = huskyGames2016.filter(huskiesLost);
+console.log(lostArray);
 
 //Log out an array of opponents that UW lost to. Hint: Use the `.map()` method 
 //to extract the opponent names!
