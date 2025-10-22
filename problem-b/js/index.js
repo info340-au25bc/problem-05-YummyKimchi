@@ -65,7 +65,7 @@ function fizzBuzz(num) {
 
   return array;
 }
-console.log(fizzBuzz(20).slice(7, 15));
+console.log(fizzBuzz(20));
    
 
 /* Define a function `getLetterFrequencies()` that takes in a single string as 
@@ -77,7 +77,18 @@ console.log(fizzBuzz(20).slice(7, 15));
    each letter, increase the value associated with that key by one. Watch out 
    for if the letter is not in the Object yet!
    You can test this method with a word like "Mississippi". */
-
+function getLetterFrequencies(input) {
+  let returnObject = {};
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] in returnObject) {
+      returnObject[input[i]] = returnObject[input[i]] + 1;
+    } else {
+      returnObject[input[i]] = 1;
+    }
+  }
+  return returnObject;
+}
+console.log(getLetterFrequencies("Mississippi"));
    
 
 /* Create a variable `deck` that represents a deck of modern playing cards
@@ -91,7 +102,16 @@ console.log(fizzBuzz(20).slice(7, 15));
     the `deck` array! 
     
     You can log out the `deck` to check your work! */
-
+let deck = [];
+let suit = ["hearts", "diamonds", "clubs", "spades"];
+let rank = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+for (let i in suit) {
+  for (let j in rank) {
+    deck.push({"suit":suit[i], "rank":rank[j]});
+  }
+}
+console.log(deck);
+console.log(deck.length);
     
 
 //You can test the below functions by creating e.g., a `pokerHand` array that 
@@ -101,7 +121,14 @@ console.log(fizzBuzz(20).slice(7, 15));
    objects (e.g., a Poker hand) and returns whether or not the Queen of Hearts
    is in that array.
    Hint: use a loop to check each card. */
-
+function containsQueenOfHearts(arrayCard) {
+  for (let i in arrayCard) {
+    if(arrayCard[i].rank === 12 && arrayCard[i].suit === "hearts") {
+      return true;
+    }
+  }
+  return false;
+}
    
 
 /* Define a function `getHighCard()` that takes in an array of "card" objects
