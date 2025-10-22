@@ -88,7 +88,12 @@ lostArray.forEach(function(game) {
 //Use the `filter()` method with an anonymous callback function to get an array
 //of games where UW had at least one fumble.
 //Log out HOW MANY games included fumbles.
-
+let fumbleArray = huskyGames2016.filter(function(game){
+  if (game.fumbles > 0) {
+    return game;
+  }
+});
+console.log(fumbleArray.length);
 
 //Define a function `mostYardsPassing()` that takes in two "game" objects and
 //returns the game that has a greater number of passing yards.
