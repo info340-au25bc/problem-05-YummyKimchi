@@ -76,7 +76,14 @@ console.log(lostArray.map(extractOpponent));
 //line, in the following format:
 //    "Rutgers at UW, 13 to 48"
 //You should use an anonymous callback function.
-
+lostArray.forEach(function(game) {
+    if (game.opponent !== "UW") {
+      console.log(game.opponent + " at UW, " + game.opponent_score + " to " +  game.home_score);
+    } else {
+      console.log("UW at " + game.home + ", " + game.home_score + " to " + game.opponent_score);
+    }
+  }
+);
 
 //Use the `filter()` method with an anonymous callback function to get an array
 //of games where UW had at least one fumble.
