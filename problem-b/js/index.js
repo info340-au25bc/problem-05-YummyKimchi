@@ -104,7 +104,7 @@ console.log(getLetterFrequencies("Mississippi"));
     You can log out the `deck` to check your work! */
 let deck = [];
 let suit = ["hearts", "diamonds", "clubs", "spades"];
-let rank = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+let rank = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 for (let i in suit) {
   for (let j in rank) {
     deck.push({"suit":suit[i], "rank":rank[j]});
@@ -135,7 +135,15 @@ function containsQueenOfHearts(arrayCard) {
   and returns the card object with the highest value. The "high card" is the one
   with the highest rank. Cards of different suits but the same rank are 
   considered to have the same value, and either is a valid result */
-
+function getHighCard(arrayCard) {
+  let returnObject = arrayCard.pop();
+  for (let i in arrayCard) {
+    if (arrayCard[i].rank > returnObject.rank) {
+      returnObject = arrayCard[i];
+    }
+  }
+  return returnObject;
+}
   
 
 /* Define a function `isFlush()` that takes in an array of "card" objects and
