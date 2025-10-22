@@ -2,16 +2,22 @@
 
 /* Define a function `addFour()` that takes a single argument 
    and returns a value 4 greater than the input.*/
+function addFour(num) {
+  return num + 4;
+}
 
-   
 /* Create and log a variable `twelve` that is the result of passing 8 to your
    addFour() function. */
+let twelve = addFour(8);
+console.log(twelve);
 
    
 /* Create and log a variable `twelveString` that is the result of passing "8" 
    (a string) to your addFour() function. Consider what this tells you about how
   the function should be explained (e.g., in a comment). */
-
+let twelveString = addFour("8");
+console.log(twelveString);
+// The result was 84. What this tells me is that the function basically concatenated the 4 into a string as it addit to the string of 8 that was inputted.
   
 
 /* Define a function `compoundInterest()` that takes three parameters: 
@@ -25,7 +31,10 @@
    You can call the method and log the result to check your work. Compare to
      http://www.mathwarehouse.com/calculators/continuous-compound-interest-calculator.php
 */
-
+function compoundInterest(principle, interest_rate, num_years) {
+  return principle * Math.exp(interest_rate * num_years);
+}
+console.log(compoundInterest(100, 0.04, 6));
 
 
 /* Define a function `fizzBuzz()` that takes in a single number as an argument.
