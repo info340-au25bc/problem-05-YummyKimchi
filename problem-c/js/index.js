@@ -70,7 +70,7 @@ console.log(lostArray);
 
 //Log out an array of opponents that UW lost to. Hint: Use the `.map()` method 
 //to extract the opponent names!
-
+console.log(lostArray.map(extractOpponent));
 
 //Use a `forEach()` loop to log out each of the games UW lost, each on its own 
 //line, in the following format:
